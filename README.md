@@ -1,4 +1,4 @@
-# visualization-with-cnn
+# Visual attention
 Visualize where CNN is focusing its attention.
 
 ## Usage

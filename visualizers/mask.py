@@ -14,13 +14,6 @@ class ZeilerFergus(Visualizer):
         self.backbone.to(self.device).eval()
 
 
-    def run(self, imgs):
-        imgs = self.transform(imgs)
-        outputs = [self._run(img) for img in imgs]
-        outputs = self.untransform(outputs)
-        return outputs
-
-
     def _run(self, img):
         masked = self._mask(img)
         img, masked = img.to(self.device), masked.to(self.device)

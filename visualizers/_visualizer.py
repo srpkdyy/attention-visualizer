@@ -1,5 +1,6 @@
 import torch
 from torchvision import transforms as TF
+from tqdm import tqdm
 
 class Visualizer:
     def __init__(self):
@@ -14,6 +15,12 @@ class Visualizer:
             ])
 
     def run(self, imgs):
+        imgs = self.transform(imgs)
+        outputs = [self._run(img) for img in tqdm(imgs)]
+        outputs = self.untransform(outputs)
+        return outputs
+
+    def _run(self, img):
         pass
 
     def transform(self, imgs):

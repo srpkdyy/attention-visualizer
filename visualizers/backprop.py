@@ -5,7 +5,7 @@ from ._visualizer import Visualizer
 
 
 
-class BP(Visualizer):
+class BackProp(Visualizer):
     def __init__(self):
         super().__init__()
         self.backbone = models.vgg16(pretrained=True)
